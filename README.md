@@ -4,7 +4,7 @@
  <li>Usage</li> <li>Commands</li> <li>Testing</li> <li>Authors</li> <li>License</li> </ul> <h2>Requirements</h2> <ul> <li>Ubuntu 20.04 LTS</li> <li>Python 3.8.5</li> <li>pycodestyle 2.8.* </li> </ul> <h2>Installation</h2> <p>Clone the repository to your local machine using terminal</p> 
 <pre>
   <code>
-    $ git clone https://github.com/AirBnB_clone.git
+$ git clone https://github.com/AirBnB_clone.git
   </code>
 </pre>
  <h2>Usage</h2> 
