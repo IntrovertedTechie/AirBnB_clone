@@ -11,4 +11,8 @@
 <pre>
 <code>$ ./console</code>
 </pre>
-<p>Start the console by running ./console. Type 'help' to see the available commands</p> <h2>Commands</h2> <ul> <li>quit</li> <li>EOF</li> <li>create</li> <li>show</li> <li>destroy</li> <li>all</li> <li>update</li> <li>count</li> </ul> <h2>Methods</h2> <p>All, show, destroy, and update can be used with the following syntax:</p> <h2>Testing</h2> <p>The project has been tested using unittest in the AirBnB_clone/tests directory</p> <h2>Authors</h2> <ul> <li><a href="https://github.com/adioadebayo">Adio Adebayo</a></li> <li><a href="https://github.com/SobgeyeOloju">Sobgeye Oloju</a></li> </ul> <h2>License</h2> <p>AirBnB clone is released under the MIT license. See LICENSE for more details.</p>
+<p>Start the console by running ./console. Type 'help' to see the available commands</p>
+<pre>
+<code>$ help </code>
+</pre>
+ <h2>Commands</h2> <ul> <li>quit</li> <li>EOF</li> <li>create</li> <li>show</li> <li>destroy</li> <li>all</li> <li>update</li> <li>count</li> </ul> <h2>Methods</h2> <p>All, show, destroy, and update can be used with the following syntax:</p> <h2>Testing</h2> <p>The project has been tested using unittest in the AirBnB_clone/tests directory</p> <h2>Authors</h2> <ul> <li><a href="https://github.com/adioadebayo">Adio Adebayo</a></li> <li><a href="https://github.com/SobgeyeOloju">Sobgeye Oloju</a></li> </ul> <h2>License</h2> <p>AirBnB clone is released under the MIT license. See LICENSE for more details.</p>
