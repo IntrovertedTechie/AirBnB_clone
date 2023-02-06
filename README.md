@@ -104,15 +104,12 @@ All your tests should be executed by using this command: python3 -m unittest dis
 
 You can also test file by file by using this command: python3 -m unittest tests/test_models/test_base_model.py
 
-Authors
 
-Adio Adebayo
-
-Sobgeye Oloju
-
-GitHub:
-
-Adio Adebayo: https://github.com/IntrovertedTechie
-
-Sobgeye:https://github.com/
+<h2>Authors</h2>
+<ul>
+  <li><a href="https://github.com/adioadebayo">Adio Adebayo</a></li>
+  <li><a href="https://github.com/SobgeyeOloju">Sobgeye Oloju</a></li>
+</ul>
+<h2>License</h2>
+<p>AirBnB clone is released under the MIT license. See LICENSE for more details.</p>
 
