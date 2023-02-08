@@ -1,0 +1,15 @@
+/* Styling for doc footer */
+
+footer {
+    background-color: white;
+    text-align: center;
+    vertical-align: middle;
+    height: 60px;
+    width: 100%;
+    border-top: 1px solid #CCCCCC;
+    position: fixed;
+    bottom: 0px;
+    /* Places footer at the bottom of the page */
+    display: flex;
+    justify-content: center;
+}
