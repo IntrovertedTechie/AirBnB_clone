@@ -1,135 +1,166 @@
 #!/usr/bin/python3
-'''Defines tests for `Place` class
-'''
-from models.place import Place
+"""
+Contains the TestPlaceDocs classes
+"""
+
+from datetime import datetime
+import inspect
+from models import place
 from models.base_model import BaseModel
+import pep8
 import unittest
+Place = place.Place
+
+
+class TestPlaceDocs(unittest.TestCase):
+    """Tests to check the documentation and style of Place class"""
+    @classmethod
+    def setUpClass(cls):
+        """Set up for the doc tests"""
+        cls.place_f = inspect.getmembers(Place, inspect.isfunction)
+
+    def test_pep8_conformance_place(self):
+        """Test that models/place.py conforms to PEP8."""
+        pep8s = pep8.StyleGuide(quiet=True)
+        result = pep8s.check_files(['models/place.py'])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warnings).")
+
+    def test_pep8_conformance_test_place(self):
+        """Test that tests/test_models/test_place.py conforms to PEP8."""
+        pep8s = pep8.StyleGuide(quiet=True)
+        result = pep8s.check_files(['tests/test_models/test_place.py'])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warnings).")
+
+    def test_place_module_docstring(self):
+        """Test for the place.py module docstring"""
+        self.assertIsNot(place.__doc__, None,
+                         "place.py needs a docstring")
+        self.assertTrue(len(place.__doc__) >= 1,
+                        "place.py needs a docstring")
+
+    def test_place_class_docstring(self):
+        """Test for the Place class docstring"""
+        self.assertIsNot(Place.__doc__, None,
+                         "Place class needs a docstring")
+        self.assertTrue(len(Place.__doc__) >= 1,
+                        "Place class needs a docstring")
+
+    def test_place_func_docstrings(self):
+        """Test for the presence of docstrings in Place methods"""
+        for func in self.place_f:
+            self.assertIsNot(func[1].__doc__, None,
+                             "{:s} method needs a docstring".format(func[0]))
+            self.assertTrue(len(func[1].__doc__) >= 1,
+                            "{:s} method needs a docstring".format(func[0]))
 
 
 class TestPlace(unittest.TestCase):
-    '''TestPlace inherits from unittest and tests the `Place` class.
-    '''
+    """Test the Place class"""
+    def test_is_subclass(self):
+        """Test that Place is a subclass of BaseModel"""
+        place = Place()
+        self.assertIsInstance(place, BaseModel)
+        self.assertTrue(hasattr(place, "id"))
+        self.assertTrue(hasattr(place, "created_at"))
+        self.assertTrue(hasattr(place, "updated_at"))
 
-    def setUp(self):
-        '''Defines steps to follow before tests are run
-        '''
-        self.test_place = Place()
+    def test_city_id_attr(self):
+        """Test Place has attr city_id, and it's an empty string"""
+        place = Place()
+        self.assertTrue(hasattr(place, "city_id"))
+        self.assertEqual(place.city_id, "")
 
-    def test_inherits_basemodel(self):
-        '''Tests `Place` inherits from BaseModel
-        '''
-        self.assertIsInstance(self.test_place, BaseModel)
+    def test_user_id_attr(self):
+        """Test Place has attr user_id, and it's an empty string"""
+        place = Place()
+        self.assertTrue(hasattr(place, "user_id"))
+        self.assertEqual(place.user_id, "")
 
-    def test_cityid_exists(self):
-        '''Tests that the `city_id` public class attribute exists
-        '''
-        self.assertTrue(hasattr(Place, 'city_id'))
+    def test_name_attr(self):
+        """Test Place has attr name, and it's an empty string"""
+        place = Place()
+        self.assertTrue(hasattr(place, "name"))
+        self.assertEqual(place.name, "")
 
-    def test_cityid_type(self):
-        '''Test ensures `city_id` public class attribute is type str
-        '''
-        self.assertIsInstance(Place.city_id, str)
+    def test_description_attr(self):
+        """Test Place has attr description, and it's an empty string"""
+        place = Place()
+        self.assertTrue(hasattr(place, "description"))
+        self.assertEqual(place.description, "")
 
-    def test_userid_exists(self):
-        '''Test ensures `user_id` public class attribute exists
-        '''
-        self.assertTrue(hasattr(Place, 'user_id'))
+    def test_number_rooms_attr(self):
+        """Test Place has attr number_rooms, and it's an int == 0"""
+        place = Place()
+        self.assertTrue(hasattr(place, "number_rooms"))
+        self.assertEqual(type(place.number_rooms), int)
+        self.assertEqual(place.number_rooms, 0)
 
-    def test_userid_type(self):
-        '''Test ensures `user_id` public class attribute is type str
-        '''
-        self.assertIsInstance(Place.user_id, str)
+    def test_number_bathrooms_attr(self):
+        """Test Place has attr number_bathrooms, and it's an int == 0"""
+        place = Place()
+        self.assertTrue(hasattr(place, "number_bathrooms"))
+        self.assertEqual(type(place.number_bathrooms), int)
+        self.assertEqual(place.number_bathrooms, 0)
 
-    def test_name_exists(self):
-        '''Test ensures `name` public class attribute exists
-        '''
-        self.assertTrue(hasattr(Place, 'name'))
+    def test_max_guest_attr(self):
+        """Test Place has attr max_guest, and it's an int == 0"""
+        place = Place()
+        self.assertTrue(hasattr(place, "max_guest"))
+        self.assertEqual(type(place.max_guest), int)
+        self.assertEqual(place.max_guest, 0)
 
-    def test_name_type(self):
-        '''Test ensures `name` public class attribute is type str
-        '''
-        self.assertIsInstance(Place.name, str)
+    def test_price_by_night_attr(self):
+        """Test Place has attr price_by_night, and it's an int == 0"""
+        place = Place()
+        self.assertTrue(hasattr(place, "price_by_night"))
+        self.assertEqual(type(place.price_by_night), int)
+        self.assertEqual(place.price_by_night, 0)
 
-    def test_description_exists(self):
-        '''Test ensures `description` public class attribute exists
-        '''
-        self.assertTrue(hasattr(Place, 'description'))
+    def test_latitude_attr(self):
+        """Test Place has attr latitude, and it's a float == 0.0"""
+        place = Place()
+        self.assertTrue(hasattr(place, "latitude"))
+        self.assertEqual(type(place.latitude), float)
+        self.assertEqual(place.latitude, 0.0)
 
-    def test_description_type(self):
-        '''Test ensures `description` public class attribute is type str
-        '''
-        self.assertIsInstance(Place.description, str)
+    def test_latitude_attr(self):
+        """Test Place has attr longitude, and it's a float == 0.0"""
+        place = Place()
+        self.assertTrue(hasattr(place, "longitude"))
+        self.assertEqual(type(place.longitude), float)
+        self.assertEqual(place.longitude, 0.0)
 
-    def test_number_rooms_exists(self):
-        '''Test ensures `number_rooms` public class attribute exists
-        '''
-        self.assertTrue(hasattr(Place, 'number_rooms'))
+    def test_amenity_ids_attr(self):
+        """Test Place has attr amenity_ids, and it's an empty list"""
+        place = Place()
+        self.assertTrue(hasattr(place, "amenity_ids"))
+        self.assertEqual(type(place.amenity_ids), list)
+        self.assertEqual(len(place.amenity_ids), 0)
 
-    def test_number_rooms_type(self):
-        '''Test ensures `number_rooms` public class attribute is type int
-        '''
-        self.assertIsInstance(Place.number_rooms, int)
+    def test_to_dict_creates_dict(self):
+        """test to_dict method creates a dictionary with proper attrs"""
+        p = Place()
+        new_d = p.to_dict()
+        self.assertEqual(type(new_d), dict)
+        for attr in p.__dict__:
+            self.assertTrue(attr in new_d)
+            self.assertTrue("__class__" in new_d)
 
-    def test_number_bathrooms_exists(self):
-        '''Test ensures `number_bathrooms` public class attribute exists
-        '''
-        self.assertTrue(hasattr(Place, 'number_bathrooms'))
+    def test_to_dict_values(self):
+        """test that values in dict returned from to_dict are correct"""
+        t_format = "%Y-%m-%dT%H:%M:%S.%f"
+        p = Place()
+        new_d = p.to_dict()
+        self.assertEqual(new_d["__class__"], "Place")
+        self.assertEqual(type(new_d["created_at"]), str)
+        self.assertEqual(type(new_d["updated_at"]), str)
+        self.assertEqual(new_d["created_at"], p.created_at.strftime(t_format))
+        self.assertEqual(new_d["updated_at"], p.updated_at.strftime(t_format))
 
-    def test_number_bathrooms_type(self):
-        '''Test ensures `number_bathrooms` public class attribute is type int
-        '''
-        self.assertIsInstance(Place.number_bathrooms, int)
-
-    def test_max_guest_exists(self):
-        '''Test ensures `max_guest` public class attribute exists
-        '''
-        self.assertTrue(hasattr(Place, 'max_guest'))
-
-    def test_max_guest_type(self):
-        '''Test ensures `max_guest` public class attribute is type int
-        '''
-        self.assertIsInstance(Place.max_guest, int)
-
-    def test_price_by_night_exists(self):
-        '''Test ensures `price_by_night` public class attribute exists
-        '''
-        self.assertTrue(hasattr(Place, 'price_by_night'))
-
-    def test_price_by_night_type(self):
-        '''Test ensures `price_by_night` public class attribute is type int
-        '''
-        self.assertIsInstance(Place.price_by_night, int)
-
-    def test_latitude_exists(self):
-        '''Test ensures `latitude` public class attribute exists
-        '''
-        self.assertTrue(hasattr(Place, 'latitude'))
-
-    def test_latitude_type(self):
-        '''Test ensures `latitude` public class attribute is type float
-        '''
-        self.assertIsInstance(Place.latitude, float)
-
-    def test_longitude_exists(self):
-        '''Test ensures `longitude` public class attribute exists
-        '''
-        self.assertTrue(hasattr(Place, 'longitude'))
-
-    def test_longitude_type(self):
-        '''Test ensures `longitude` public class attribute is type float
-        '''
-        self.assertIsInstance(Place.longitude, float)
-
-    def test_amenity_ids_exists(self):
-        '''Test ensures `amenity_ids` public class attribute exists
-        '''
-        self.assertTrue(hasattr(Place, 'amenity_ids'))
-
-    def test_amenity_ids_type(self):
-        '''Test ensures `amenity_ids` public class attribute is type list
-        '''
-        self.assertIsInstance(Place.amenity_ids, list)
-
-
-if __name__ == "__main__":
-    unittest.main()
+    def test_str(self):
+        """test that the str method has the correct output"""
+        place = Place()
+        string = "[Place] ({}) {}".format(place.id, place.__dict__)
+        self.assertEqual(string, str(place))

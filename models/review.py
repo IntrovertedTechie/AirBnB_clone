@@ -1,17 +1,16 @@
 #!/usr/bin/python3
-'''Definition of class Review
-'''
+"""
+Class Review that inherits from BaseModel
+"""
 from models.base_model import BaseModel
+from models.place import Place
+from models.user import User
 
 
 class Review(BaseModel):
-    '''Review: Stores data for reviews
-
-    Attributes:
-        place_id (string): Unique id for Review objects
-        user_id (string): id of user object who authored Review
-        text (string): Text containing review message
-    '''
+    """
+    Class Review that inherits from BaseModel
+    """
     place_id = ""
     user_id = ""
     text = ""

@@ -1,14 +1,12 @@
 #!/usr/bin/python3
-'''Definition of Amenity class
-'''
+"""
+Class Amenity that inherits from BaseModel
+"""
 from models.base_model import BaseModel
 
 
 class Amenity(BaseModel):
-    '''Amenity: class defines attributes that describe amenities
-    available at specified locations
-
-    Attributes:
-        name (string): Amenity name
-    '''
+    """
+    Class Amenity that inherits from BaseModel
+    """
     name = ""
