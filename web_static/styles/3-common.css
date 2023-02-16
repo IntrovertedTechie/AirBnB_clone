@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: #484848;
+  font-size: 14px;
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+footer {
+  border-top: 1px solid #CCCCCC;
+}
+
+header {
+  border-bottom: 1px solid #CCCCCC;
+}
+
+.logo {
+  background-image: url('../images/logo.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  height: 30px;
+  width: 150px;
+  margin-left: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
