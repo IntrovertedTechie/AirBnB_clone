@@ -1,9 +1,17 @@
 header {
-    background-color: white;
-    height: 70px;
-    width: 100%;
-    border-bottom: 1px solid #CCCCCC;
-    background-image: url(../images/logo.png);
-    background-repeat: no-repeat;
-    background-position: 20px 50%;
+       height: 70px; 
+       width: 100%;
+       background-color: white;
+	   border-bottom: 1px solid #CCCCCC;
+	   justify-content: center;
+	   display: flex;
+}
+header div.logo {
+       background-image: url("../images/logo.png");
+       background-position: left center;
+       background-size: auto;
+       width: 100%;
+       margin-left: 20px;
+       background-repeat: no-repeat;
+
 }
