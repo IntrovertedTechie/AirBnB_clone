@@ -1,0 +1,118 @@
+.places {
+       width: 1000px;
+       margin: auto;
+       display: block;
+}
+
+.places-box {
+       text-align: center;
+}
+
+section.places h2 {
+       font-size: 30px;
+       width: 250px;
+       margin-left: 60px;
+       margin-bottom: 5px;
+       margin-right: 0px;
+}
+
+.places-box h2 {
+       font-size: 30px;
+       margin-right: 20px;
+       margin-top: 5px;
+}
+
+.places-box article {
+       display: inline-block;
+       width: 390px;
+       height: 330px;
+       padding: 15px;
+       margin: 20px;
+       border: 1px solid #FF5A5F;
+       text-align: center;
+       border-radius: 4px;
+}
+
+.price_by_night {
+       color: #FF5A5F;
+       min-width: 60px;
+       height: 60px;
+       font-size: 20px;
+       margin-right: 10px;
+       float: right;
+       border: 4px solid #FF5A5F;
+       text-align: center;
+       border-radius: 100%;
+}
+
+.information {
+       display: block;
+       height: 70px;
+       padding-left: 50px;
+       padding-top: 2px;
+       margin-top: 35px;
+       text-align: center;
+       border-top: 1px solid #DDDDDD;
+       border-bottom: 1px solid #DDDDDD;
+}
+
+.max_guest {
+       display: inline-block;
+       width: 100px;
+       height: 100%;
+       background-image: url("../images/icon_group.png");
+       background-repeat: no-repeat;
+}
+
+.max_guest p {
+       text-align: left;
+       float: left;
+       margin-top: 45px;
+       margin-left: -5px;
+}
+
+.number_rooms p {
+       text-align: left;
+       float: left;
+       margin-top: 45px;
+       margin-left: -12px;
+}
+
+.number_bathrooms p {
+       text-align: left;
+       float: left;
+       margin-top: 45px;
+       margin-left: -12px;
+}
+
+.number_rooms {
+       display: inline-block;
+       width: 100px;
+       height: 100%;
+       background-image: url("../images/icon_bed.png");
+       background-repeat: no-repeat;
+}
+
+.number_bathrooms {
+       display: inline-block;
+       width: 100px;
+       height: 100%;
+       background-image: url("../images/icon_bath.png");
+       background-repeat: no-repeat;
+}
+
+.user, .description {
+       text-align: left;
+}
+
+.user p {
+       margin-bottom: 5px;
+}
+
+.description p {
+       margin-top: 5px;
+}
+
+footer {
+       position: relative;
+}
